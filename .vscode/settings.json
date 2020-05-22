@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.deploySubpath": "",
+    "appService.defaultWebAppToDeploy": "/subscriptions/e98f7ecb-9854-4fb6-8c36-dff3cd0ddf30/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/SaleschatAppApi"
+}
