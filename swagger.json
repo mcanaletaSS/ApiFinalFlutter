@@ -225,6 +225,10 @@
                                         "token": {
                                             "type":"string",
                                             "example":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" 
+                                        },
+                                        "_id": {
+                                            "type": "string",
+                                            "example": "7b2e17a6-b158-4972-b573-0517cb453b02"
                                         }
                                     }
                                 }

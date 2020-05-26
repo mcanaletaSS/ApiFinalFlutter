@@ -37,7 +37,7 @@ exports.CreateUser = (req, res) => {
                 phoneNumber: phoneNumber,
                 userId: _id
             },process.env.jwtKey);
-            res.status(201).json({message: 'Created', token: token});  
+            res.status(201).json({message: 'Created', token: token, _id: _id});  
         }catch(err){
             return resp.resultMessage(res, 500);
         }
