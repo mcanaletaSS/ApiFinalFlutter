@@ -4,6 +4,34 @@ const UserDB = admin.firestore().collection('user');
 const resp = require('../../../middleware/responses');
 
 
+exports.PutAllUser = (req, res) => {
+    const phoneNumber = req.params.phoneNumber;
+    const {username, photo, state} = req.body;
+    
+    const schema = Joi.object({
+        username: Joi.string().required(),
+        state: Joi.string().required(),
+        photo: Joi.string().required()
+    });
+    const { error } = schema.validate({ username, photo, state });
+    if (error) return resp.resultMessage(res, 400, error);
+    
+    (async() => {
+        try{
+            const UserDocs = await (UserDB.doc(phoneNumber.toString())).get();
+            if(UserDocs.exists) return resp.resultMessage(res, 404);
+            await UserDocs.ref.update({
+                username: username,
+                state: state,
+                photo: photo
+            });
+            res.status(200).json({'message': 'OK', '_id': UserDocs.data()});
+        }catch(err){
+            return resp.resultMessage(res, 500);
+        }
+    })();
+};
+
 exports.PutUserUsername = (req, res) => {
     const userId = req.userData.userId;
     const username = req.body.username;
