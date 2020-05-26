@@ -19,7 +19,7 @@ exports.PutAllUser = (req, res) => {
     (async() => {
         try{
             const UserDocs = await (UserDB.doc(phoneNumber.toString())).get();
-            if(UserDocs.exists) return resp.resultMessage(res, 404);
+            if(!UserDocs.exists) return resp.resultMessage(res, 404);
             await UserDocs.ref.update({
                 username: username,
                 state: state,
