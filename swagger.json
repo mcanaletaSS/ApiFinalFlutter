@@ -271,6 +271,11 @@
                 "tags": [
                     "Users"
                 ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
                 "summary": "Update user with given phone",
                 "requestBody": {
                     "required": true,
